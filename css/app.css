@@ -1,0 +1,24 @@
+ul, ol {
+    height: 100%;
+    list-style-position: inside;
+    margin-bottom: 0px;
+    padding: 0px;
+
+    background-color: lightgrey;
+}
+
+li {
+    padding: 10px 5px;
+}
+
+li.is-hovered {
+    background-image: linear-gradient(white, lightgrey);
+}
+
+ol > li.list-group-item {
+    display: list-item;
+}
+
+.row.extra-margin {
+    margin-top: 15px;
+}

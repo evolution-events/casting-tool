@@ -1,7 +1,50 @@
 <html>
     <head>
-        <title>ES6 Module Test</title>
-        <script type="module" src="js/app.js"></script>
+        <title>Casting Tool</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/app.css">
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">On the Styx - Casting Form</h1>
+                <hr>
+                <p>Please drag your character choices into the right container and order them based on your preference (1 = highest preference).</p>
+                <p>Leaving characters in the left container means you do not want to play these characters under any circumstances.</p>
+                <p>You will need to drag at least 5 characters into the right container in order to be allowed to continue.</p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h2>Won't play</h2>
+                </div>
+                <div class="col-6">
+                    <h2>Will play (in order of preference)</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <ul id="casting-options" class="list-group">
+                        <!-- This is where the sortable list will go -->
+                    </ul>
+                </div>
+
+                <div class="col-6">
+                    <ol id="casting-selections" class="list-group">
+                        <!-- This is where you drag options to opt into them -->
+                    </ol>
+                </div>
+            </div>
+            <div class="row extra-margin">
+                <div class="col-12">
+                    <button id="submit" type="submit" class="btn btn-primary float-right" disabled="true">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <script type="module" src="js/app.js"></script>
+    </body>
 </html>
