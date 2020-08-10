@@ -1160,7 +1160,10 @@ function sortable(sortableElements, options) {
                     return data.placeholder;
                 });
                 // check if element is not in placeholders
-                if (placeholders.indexOf(element) === -1 && sortableElement === element && !_filter(element.children, options.items).length) {
+                // FIX: STYLING-SPECIFIC
+                // We only get to do this since there is no space between our list items. See https://github.com/lukasoppermann/html5sortable/pull/517
+                // if (placeholders.indexOf(element) === -1 && sortableElement === element && !_filter(element.children, options.items).length) {
+                if (placeholders.indexOf(element) === -1 && sortableElement === element) {
                     placeholders.forEach(function (element) { return element.remove(); });
                     element.appendChild(store(sortableElement).placeholder);
                 }
