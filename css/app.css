@@ -31,3 +31,7 @@ button[type="submit"] {
     min-width: 25%;
     margin-bottom: 20px;
 }
+
+.jumbotron {
+    padding: 2rem;
+}
