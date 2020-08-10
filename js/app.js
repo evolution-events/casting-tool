@@ -21,7 +21,8 @@ var options = [
     "Zeus",
 ];
 
-var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd3wYA05KwqPRxjV3V4v7uUw9k7hx75WDn-NLet2G4j1rSLuQ/viewform?entry.1246043067=$CHARACTERS";
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd3wYA05KwqPRxjV3V4v7uUw9k7hx75WDn-NLet2G4j1rSLuQ/viewform?entry.1246043067=$CHARACTERS&entry.1009823322=$NAME";
+
 var minSelectedCharacters = 5;
 
 var list = document.getElementById('casting-options');
@@ -56,9 +57,10 @@ var rowHeight = document.getElementById('casting-options').offsetHeight;
 });
 
 document.getElementById('submit').addEventListener('click', () => {
-    var characters = Array.from(document.querySelectorAll('#casting-selections>li')).map((e, i) => `${i + 1} ${e.innerText}`).join('\n');
+    var name = document.querySelector('#name').value;
+    var characters = `(${name})\n` + Array.from(document.querySelectorAll('#casting-selections>li')).map((e, i) => `${i + 1} ${e.innerText}`).join('\n');
 
-    var url = formUrl.replace('$CHARACTERS', encodeURIComponent(characters));
+    var url = formUrl.replace('$CHARACTERS', encodeURIComponent(characters)).replace('$NAME', encodeURIComponent(name));
 
     window.location.href = url;
 });
