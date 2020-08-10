@@ -22,3 +22,9 @@ ol > li.list-group-item {
 .row.extra-margin {
     margin-top: 15px;
 }
+
+button[type="submit"] {
+    line-height: 2.5;
+    min-width: 25%;
+    margin-bottom: 20px;
+}
