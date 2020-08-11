@@ -50,6 +50,7 @@ sortable('#casting-selections', {
 
 sortable('#casting-options')[0].addEventListener('sortupdate', verifyRequirementsMet);
 sortable('#casting-selections')[0].addEventListener('sortupdate', verifyRequirementsMet);
+document.querySelector('#name').addEventListener('input', verifyRequirementsMet);
 
 var rowHeight = document.getElementById('casting-options').offsetHeight;
 ['casting-options', 'casting-selections'].forEach(listId => {
@@ -66,9 +67,11 @@ document.getElementById('submit').addEventListener('click', () => {
 });
 
 function verifyRequirementsMet() {
-    var submitButton = document.querySelector('#submit');
+    var submitButton = document.querySelector('#prepareSubmit');
+    var name = document.querySelector('#name').value;
+    var nameIsFilledOut = (name !== undefined && name !== null && name.length > 1);
 
-    if (document.querySelectorAll('#casting-selections>li').length >= minSelectedCharacters) {
+    if (nameIsFilledOut && document.querySelectorAll('#casting-selections>li').length >= minSelectedCharacters) {
         submitButton.disabled = false;
     } else {
         submitButton.disabled = true;
