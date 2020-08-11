@@ -22,14 +22,13 @@ ol > li.list-group-item {
     display: list-item;
 }
 
-.row.extra-margin {
-    margin-top: 15px;
+.row:last-child {
+    margin: 15px 0 20px 0;
 }
 
 button[type="submit"] {
     line-height: 2.5;
     min-width: 25%;
-    margin-bottom: 20px;
 }
 
 .jumbotron {
