@@ -46,7 +46,30 @@
             </div>
             <div class="row extra-margin">
                 <div class="col-12">
-                    <button id="submit" type="submit" class="btn btn-primary float-right" disabled="true">Submit</button>
+                    <button id="prepareSubmit" data-toggle="modal" data-target="#summaryModal" class="btn btn-primary float-right" disabled="true">Done</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" id="summaryModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Please verify before submission</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Your name:</h6>
+                        <p id="nameGiven" class="indented"></p>
+                        <h6>Your selected characters, in order of preference:</h6>
+                        <ol id="selectedPreferences"></ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" id="submit" class="btn btn-primary">Continue to Google Form</button>
+                    </div>
                 </div>
             </div>
         </div>

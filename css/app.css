@@ -26,11 +26,21 @@ ol > li.list-group-item {
     margin: 15px 0 20px 0;
 }
 
-button[type="submit"] {
+button.btn {
     line-height: 2.5;
     min-width: 25%;
 }
 
 .jumbotron {
     padding: 2rem;
+}
+
+.modal-dialog .list-group-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border: none;
+}
+
+.indented {
+    padding-left: 1.25rem;
 }

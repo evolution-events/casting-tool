@@ -48,9 +48,11 @@ sortable('#casting-selections', {
     hoverClass: 'is-hovered',
 });
 
-sortable('#casting-options')[0].addEventListener('sortupdate', verifyRequirementsMet);
-sortable('#casting-selections')[0].addEventListener('sortupdate', verifyRequirementsMet);
-document.querySelector('#name').addEventListener('input', verifyRequirementsMet);
+[verifyRequirementsMet, updateVerificationPopup].forEach(f => {
+    sortable('#casting-options')[0].addEventListener('sortupdate', f);
+    sortable('#casting-selections')[0].addEventListener('sortupdate', f);
+    document.querySelector('#name').addEventListener('input', f);
+});
 
 var rowHeight = document.getElementById('casting-options').offsetHeight;
 ['casting-options', 'casting-selections'].forEach(listId => {
@@ -76,4 +78,21 @@ function verifyRequirementsMet() {
     } else {
         submitButton.disabled = true;
     }
+}
+
+function updateVerificationPopup() {
+    var name = document.querySelector('#name').value;
+    var targetNameContainer = document.querySelector('#nameGiven');
+    targetNameContainer.innerText = name;
+
+    var characters = Array.from(document.querySelectorAll('#casting-selections>li')).map(e => e.innerText);
+    var selectedPreferencesContainer = document.querySelector('#selectedPreferences');
+    selectedPreferencesContainer.innerHTML = '';
+
+    characters.forEach(character => {
+        var listItem = document.createElement('li');
+        listItem.appendChild(document.createTextNode(character));
+        listItem.className = 'list-group-item list-group-item-light';
+        selectedPreferencesContainer.appendChild(listItem);
+    });
 }
