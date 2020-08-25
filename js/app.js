@@ -21,7 +21,7 @@ var options = [
     "Zeus",
 ];
 
-var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd3wYA05KwqPRxjV3V4v7uUw9k7hx75WDn-NLet2G4j1rSLuQ/viewform?entry.1246043067=$CHARACTERS&entry.1009823322=$NAME";
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScJexu0GSXanv_nUrpn6xFM4KOiHvZ4wV31IucbSNy5oh_niw/viewform?usp=pp_url&entry.1827146005=$NAME&entry.1793455202=$CHARACTERS";
 
 var minSelectedCharacters = 5;
 
