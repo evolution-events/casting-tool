@@ -2,12 +2,13 @@ import sortable from './html5sortable.es.js';
 
 /// The variable 'config' needs to be externally defined.
 
-var { options, formUrl, minSelectedCharacters } = config;
+var { options, formUrl, minSelectedCharacters, header } = config;
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 var list = document.getElementById('casting-options');
 
+document.getElementById('header').textContent = header;
 document.getElementById('howmanycharacters').textContent = minSelectedCharacters;
 
 options.sort().forEach((option) => {

@@ -19,4 +19,5 @@ var config = {
   ],
   formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScJexu0GSXanv_nUrpn6xFM4KOiHvZ4wV31IucbSNy5oh_niw/viewform?usp=pp_url&entry.1827146005=$NAME&entry.1793455202=$CHARACTERS",
   minSelectedCharacters: 5,
+  header: 'On the Styx (Run 3) - Casting Form',
 };
