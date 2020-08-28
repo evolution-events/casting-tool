@@ -8,6 +8,8 @@ var { options, formUrl, minSelectedCharacters } = config;
 
 var list = document.getElementById('casting-options');
 
+document.getElementById('howmanycharacters').textContent = minSelectedCharacters;
+
 options.sort().forEach((option) => {
     var item = document.createElement('li');
     item.className = 'list-group-item list-group-item-light';
